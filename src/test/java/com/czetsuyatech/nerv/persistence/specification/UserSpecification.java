@@ -1,8 +1,8 @@
-package com.czetsuyatech.nerv.persistence.search;
+package com.czetsuyatech.nerv.persistence.specification;
 
 import com.czetsuyatech.nerv.persistence.entity.UserEntity;
-import com.czetsuyatech.nerv.persistence.search.constant.RelationalOperators;
-import com.czetsuyatech.nerv.persistence.search.constant.SpecificationConstant;
+import com.czetsuyatech.nerv.persistence.specification.constant.RelationalOperators;
+import com.czetsuyatech.nerv.persistence.specification.constant.SpecificationConstant;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Expression;

@@ -1,4 +1,4 @@
-package com.czetsuyatech.nerv.persistence.dtos;
+package com.czetsuyatech.nerv.persistence.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -10,7 +10,7 @@ import lombok.Data;
  */
 @Data
 @Builder
-public class UserDTO {
+public class UserModel {
 
   /**
    * User first name.

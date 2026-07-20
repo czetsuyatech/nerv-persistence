@@ -1,7 +1,7 @@
 package com.czetsuyatech.nerv.persistence.repository;
 
-import com.czetsuyatech.nerv.persistence.search.QueryProjectionUtils;
-import com.czetsuyatech.nerv.persistence.search.SimpleSliceImpl;
+import com.czetsuyatech.nerv.persistence.specification.QueryProjectionUtils;
+import com.czetsuyatech.nerv.persistence.specification.SimpleSliceImpl;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.Tuple;

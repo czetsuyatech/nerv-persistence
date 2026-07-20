@@ -1,4 +1,4 @@
-package com.czetsuyatech.nerv.persistence.search;
+package com.czetsuyatech.nerv.persistence.specification;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.springframework.data.jpa.domain.Specification;
 /**
  * Base builder for creating a {@link Specification} from a collection of {@link SearchCriteria}.
  *
- * <p>This class provides common support for accumulating search criteria and
+ * <p>This class provides common support for accumulating specification criteria and
  * combining them into a single specification using logical {@code and()} operations.
  *
  * @param <T> the entity type
@@ -15,7 +15,7 @@ import org.springframework.data.jpa.domain.Specification;
 public abstract class AbstractSpecificationsBuilder<T> {
 
   /**
-   * Accumulated search criteria.
+   * Accumulated specification criteria.
    */
   private final List<SearchCriteria> params = new ArrayList<>();
 
@@ -36,7 +36,7 @@ public abstract class AbstractSpecificationsBuilder<T> {
   }
 
   /**
-   * Adds a search criterion to the builder.
+   * Adds a specification criterion to the builder.
    *
    * @param key field name
    * @param operation operator symbol

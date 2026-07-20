@@ -1,7 +1,7 @@
-package com.czetsuyatech.nerv.persistence.search;
+package com.czetsuyatech.nerv.persistence.specification;
 
-import com.czetsuyatech.nerv.persistence.search.constant.RelationalOperators;
-import com.czetsuyatech.nerv.persistence.search.constant.SpecificationConstant;
+import com.czetsuyatech.nerv.persistence.specification.constant.RelationalOperators;
+import com.czetsuyatech.nerv.persistence.specification.constant.SpecificationConstant;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Expression;
@@ -41,7 +41,7 @@ public class GenericSpecification<T> implements Specification<T> {
   private final SearchCriteria criteria;
 
   /**
-   * Creates a new specification for the given search criteria.
+   * Creates a new specification for the given specification criteria.
    *
    * @param searchCriteria the criteria to apply
    */

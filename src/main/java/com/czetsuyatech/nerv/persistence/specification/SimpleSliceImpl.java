@@ -1,4 +1,4 @@
-package com.czetsuyatech.nerv.persistence.search;
+package com.czetsuyatech.nerv.persistence.specification;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;

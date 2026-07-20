@@ -1,4 +1,4 @@
-package com.czetsuyatech.nerv.persistence.search;
+package com.czetsuyatech.nerv.persistence.specification;
 
 import jakarta.persistence.Tuple;
 import jakarta.persistence.criteria.Expression;

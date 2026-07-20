@@ -1,11 +1,11 @@
-package com.czetsuyatech.nerv.persistence.search;
+package com.czetsuyatech.nerv.persistence.specification;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Represents a single parsed search condition.
+ * Represents a single parsed specification condition.
  *
  * <p>A criteria entry consists of a field name, an operation symbol,
  * and a comparison value used to build a JPA {@code Specification}.
