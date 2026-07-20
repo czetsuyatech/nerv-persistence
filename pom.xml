@@ -6,12 +6,12 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>4.0.3</version>
+    <version>4.1.0</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.czetsuyatech</groupId>
   <artifactId>nerv-persistence</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>NERV | Persistence</name>
   <url>https://www.czetsuyatech.com</url>
   <licenses>
