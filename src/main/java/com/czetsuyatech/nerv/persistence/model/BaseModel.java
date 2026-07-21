@@ -1,10 +1,12 @@
 package com.czetsuyatech.nerv.persistence.model;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @SuperBuilder
 public abstract class BaseModel {

@@ -1,11 +1,13 @@
 package com.czetsuyatech.nerv.persistence.model;
 
 import java.util.List;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.domain.Pageable;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class SliceModel<T> {
 

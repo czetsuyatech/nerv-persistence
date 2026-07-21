@@ -1,14 +1,16 @@
 package com.czetsuyatech.nerv.persistence.model;
 
 import java.time.Instant;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-@Data
 @NoArgsConstructor
 @SuperBuilder
+@Getter
+@Setter
 @ToString(callSuper = true)
 public abstract class AuditableModel extends BaseModel {
 
