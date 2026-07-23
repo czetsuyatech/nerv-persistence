@@ -1,6 +1,8 @@
 package com.czetsuyatech.nerv.persistence.entity;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Version;
@@ -36,7 +38,8 @@ public abstract class BaseEntity implements Serializable, IEntity {
   public static final int NB_SCALE = 12;
 
   @Id
-  @Column(name = "id", nullable = false, updatable = false)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
   private Long id;
 
   @Version
