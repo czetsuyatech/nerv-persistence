@@ -39,11 +39,4 @@ public abstract class BusinessEntity extends EnableEntity implements Code {
   @Column(name = "name")
   @Size(max = 255)
   protected String name;
-
-  /**
-   * Optional descriptive text for the entity.
-   */
-  @Column(name = "description", nullable = true, length = 255)
-  @Size(max = 255)
-  protected String description;
 }
