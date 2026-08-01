@@ -1,16 +1,16 @@
-package com.czetsuyatech.nerv.persistence.search;
+package com.czetsuyatech.nerv.persistence.specification;
 
-import com.czetsuyatech.nerv.persistence.dtos.UserDTO;
+import com.czetsuyatech.nerv.persistence.dto.UserModel;
 import com.czetsuyatech.nerv.persistence.entity.UserEntity;
 import com.czetsuyatech.nerv.persistence.entity.UserEntity_;
-import com.czetsuyatech.nerv.persistence.search.constant.RelationalOperators;
+import com.czetsuyatech.nerv.persistence.specification.constant.RelationalOperators;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.util.StringUtils;
 
 /**
  * Test builder for composing {@link Specification} instances for {@link UserEntity}.
  *
- * <p>The builder translates populated fields from {@link UserDTO} into
+ * <p>The builder translates populated fields from {@link UserModel} into
  * specification predicates used by repository integration tests.
  */
 public class UserSpecificationBuilder extends AbstractSpecificationsBuilder<UserEntity> {
@@ -18,7 +18,7 @@ public class UserSpecificationBuilder extends AbstractSpecificationsBuilder<User
   /**
    * Source DTO containing filter values.
    */
-  private final UserDTO userDTO;
+  private final UserModel userModel;
 
   /**
    * Flag controlling whether birth date nullability should be included in the query.
@@ -28,10 +28,10 @@ public class UserSpecificationBuilder extends AbstractSpecificationsBuilder<User
   /**
    * Creates a builder for the given DTO.
    *
-   * @param userDTO source DTO containing desired filter values
+   * @param userModel source DTO containing desired filter values
    */
-  public UserSpecificationBuilder(final UserDTO userDTO) {
-    this.userDTO = userDTO;
+  public UserSpecificationBuilder(final UserModel userModel) {
+    this.userModel = userModel;
   }
 
   /**
@@ -56,25 +56,25 @@ public class UserSpecificationBuilder extends AbstractSpecificationsBuilder<User
     if (nullBirthDate != null && !nullBirthDate) {
       spec = Specification.where(spec)
           .and(new GenericSpecification<>(new SearchCriteria(UserEntity_.birthDate.getName(),
-              RelationalOperators.NOTNULL.toString(), userDTO.getBirthDate())));
+              RelationalOperators.NOTNULL.toString(), userModel.getBirthDate())));
     }
 
-    if (userDTO.getHobbies() != null && !userDTO.getHobbies().isEmpty()) {
+    if (userModel.getHobbies() != null && !userModel.getHobbies().isEmpty()) {
       spec = Specification.where(spec)
           .and(new GenericSpecification<>(new SearchCriteria(UserEntity_.hobbies.getName(),
-              RelationalOperators.IN.toString(), userDTO.getHobbies())));
+              RelationalOperators.IN.toString(), userModel.getHobbies())));
     }
 
-    if (StringUtils.hasLength(userDTO.getFirstName())) {
+    if (StringUtils.hasLength(userModel.getFirstName())) {
       spec = Specification.where(spec)
           .and(new GenericSpecification<>(new SearchCriteria(UserEntity_.firstName.getName(),
-              RelationalOperators.LIKE.toString(), userDTO.getFirstName())));
+              RelationalOperators.LIKE.toString(), userModel.getFirstName())));
     }
 
-    if (StringUtils.hasLength(userDTO.getLastName())) {
+    if (StringUtils.hasLength(userModel.getLastName())) {
       spec = Specification.where(spec)
           .and(new GenericSpecification<>(new SearchCriteria(UserEntity_.lastName.getName(),
-              RelationalOperators.EQUAL.toString(), userDTO.getLastName())));
+              RelationalOperators.EQUAL.toString(), userModel.getLastName())));
     }
 
     return spec;

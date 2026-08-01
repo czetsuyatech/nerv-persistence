@@ -1,4 +1,4 @@
-package com.czetsuyatech.nerv.persistence.search;
+package com.czetsuyatech.nerv.persistence.specification;
 
 /**
  * Whitelist of searchable user fields used by query parsing tests.

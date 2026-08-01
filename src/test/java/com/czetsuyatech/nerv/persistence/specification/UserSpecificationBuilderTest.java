@@ -1,10 +1,10 @@
-package com.czetsuyatech.nerv.persistence.search;
+package com.czetsuyatech.nerv.persistence.specification;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.annotation.DirtiesContext.ClassMode.AFTER_CLASS;
 
 import com.czetsuyatech.nerv.persistence.config.NervDataJpaTest;
-import com.czetsuyatech.nerv.persistence.dtos.UserDTO;
+import com.czetsuyatech.nerv.persistence.dto.UserModel;
 import com.czetsuyatech.nerv.persistence.repository.UserRepository;
 import java.util.List;
 import lombok.SneakyThrows;
@@ -39,7 +39,7 @@ public class UserSpecificationBuilderTest {
   @Test
   void build_shouldReturnUnrestricted_whenSearchTermIsEmpty() {
 
-    UserSpecificationBuilder userSpecificationBuilder = new UserSpecificationBuilder(UserDTO.builder()
+    UserSpecificationBuilder userSpecificationBuilder = new UserSpecificationBuilder(UserModel.builder()
         .build());
     var userSpec = userSpecificationBuilder.build();
 
@@ -55,7 +55,7 @@ public class UserSpecificationBuilderTest {
   @Test
   void build_shouldReturnUnrestricted_whenParamIsNull() {
 
-    var userDTO = UserDTO.builder()
+    var userDTO = UserModel.builder()
         .firstName("Ed")
         .build();
     UserSpecificationBuilder userSpecificationBuilder = new UserSpecificationBuilder(userDTO);
@@ -73,7 +73,7 @@ public class UserSpecificationBuilderTest {
   @Test
   void build_shouldReturnEmptySlice_whenLasNameIsNotMatched() {
 
-    var userDTO = UserDTO.builder()
+    var userDTO = UserModel.builder()
         .lastName("Leg")
         .build();
     UserSpecificationBuilder userSpecificationBuilder = new UserSpecificationBuilder(userDTO);
@@ -91,7 +91,7 @@ public class UserSpecificationBuilderTest {
   @Test
   void build_shouldReturnUser_whenFirstAndLastNameMatched() {
 
-    var userDTO = UserDTO.builder()
+    var userDTO = UserModel.builder()
         .firstName("Edward")
         .lastName("Legaspi")
         .build();
@@ -111,10 +111,10 @@ public class UserSpecificationBuilderTest {
   @Test
   void build_shouldReturn1_whenDateIsNotNull() {
 
-    UserDTO userDTO = UserDTO.builder()
+    UserModel userModel = UserModel.builder()
         .build();
 
-    UserSpecificationBuilder userSpecificationBuilder = new UserSpecificationBuilder(userDTO);
+    UserSpecificationBuilder userSpecificationBuilder = new UserSpecificationBuilder(userModel);
     userSpecificationBuilder.setNullBirthDate(false);
     var userSpec = userSpecificationBuilder.build();
 
@@ -130,11 +130,11 @@ public class UserSpecificationBuilderTest {
   @Test
   void build_shouldReturn2_whenNameIsEdward() {
 
-    UserDTO userDTO = UserDTO.builder()
+    UserModel userModel = UserModel.builder()
         .hobbies(List.of("Chess", "Anime"))
         .build();
 
-    UserSpecificationBuilder userSpecificationBuilder = new UserSpecificationBuilder(userDTO);
+    UserSpecificationBuilder userSpecificationBuilder = new UserSpecificationBuilder(userModel);
     var userSpec = userSpecificationBuilder.build();
 
     var result = userRepository.findAllSlice(userSpec, Pageable.ofSize(10));

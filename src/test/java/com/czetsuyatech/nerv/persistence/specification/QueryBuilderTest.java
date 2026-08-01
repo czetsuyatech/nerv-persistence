@@ -1,4 +1,4 @@
-package com.czetsuyatech.nerv.persistence.search;
+package com.czetsuyatech.nerv.persistence.specification;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.annotation.DirtiesContext.ClassMode.AFTER_CLASS;
@@ -33,7 +33,7 @@ class QueryBuilderTest {
   private UserRepository userRepository;
 
   /**
-   * Verifies that an empty search string produces an unrestricted specification.
+   * Verifies that an empty specification string produces an unrestricted specification.
    */
   @SneakyThrows
   @Test
@@ -114,7 +114,7 @@ class QueryBuilderTest {
   }
 
   /**
-   * Verifies that a like search on first name returns all matching users.
+   * Verifies that a like specification on first name returns all matching users.
    */
   @SneakyThrows
   @Test
@@ -133,7 +133,7 @@ class QueryBuilderTest {
   }
 
   /**
-   * Verifies that a like search on last name returns all expected matches.
+   * Verifies that a like specification on last name returns all expected matches.
    */
   @SneakyThrows
   @Test

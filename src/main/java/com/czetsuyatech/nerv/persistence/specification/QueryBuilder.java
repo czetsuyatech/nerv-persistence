@@ -1,4 +1,4 @@
-package com.czetsuyatech.nerv.persistence.search;
+package com.czetsuyatech.nerv.persistence.specification;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import org.springframework.data.jpa.domain.Specification;
 
 /**
- * Utility class for building {@link Specification} instances from a compact search string.
+ * Utility class for building {@link Specification} instances from a compact specification string.
  *
  * <p>The builder parses a query expression into {@link SearchCriteria} items,
  * creates specification instances using a constructor that accepts a single
@@ -22,7 +22,7 @@ import org.springframework.data.jpa.domain.Specification;
 public class QueryBuilder {
 
   /**
-   * Pattern used to parse search expressions in the form {@code field<op>value,}.
+   * Pattern used to parse specification expressions in the form {@code field<op>value,}.
    */
   private static final Pattern PATTERN = Pattern.compile("(\\w+?)(<=|>=|[:<>/*~])(.+?),");
 
@@ -34,9 +34,9 @@ public class QueryBuilder {
   }
 
   /**
-   * Builds a {@link Specification} from the provided search string.
+   * Builds a {@link Specification} from the provided specification string.
    *
-   * @param search the raw search expression
+   * @param search the raw specification expression
    * @param specification the specification implementation class with a constructor accepting {@link SearchCriteria}
    * @param e optional enum class used to validate allowed field names
    * @param <T> the entity type targeted by the specification
@@ -76,7 +76,7 @@ public class QueryBuilder {
   }
 
   /**
-   * Adds a parsed search criterion to the target list when it is valid and allowed.
+   * Adds a parsed specification criterion to the target list when it is valid and allowed.
    *
    * @param key the field name
    * @param operation the operator symbol

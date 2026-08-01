@@ -1,7 +1,7 @@
-package com.czetsuyatech.nerv.persistence.search.constant;
+package com.czetsuyatech.nerv.persistence.specification.constant;
 
 /**
- * Supported relational operators used when parsing search expressions.
+ * Supported relational operators used when parsing specification expressions.
  *
  * <p>Each enum constant maps to the symbolic representation expected by
  * the query parsing layer.

@@ -38,7 +38,7 @@ public abstract class BaseEntity implements Serializable, IEntity {
   public static final int NB_SCALE = 12;
 
   @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "nerv_sequence_generator")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private Long id;
 
