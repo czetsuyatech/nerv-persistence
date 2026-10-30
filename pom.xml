@@ -12,7 +12,7 @@
 
   <groupId>com.czetsuyatech.nerv</groupId>
   <artifactId>nerv-persistence</artifactId>
-  <version>1.0.0</version>
+  <version>2.0.0</version>
   <name>NERV | Persistence</name>
   <url>https://www.czetsuyatech.com</url>
 

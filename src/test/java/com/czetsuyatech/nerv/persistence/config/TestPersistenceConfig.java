@@ -1,7 +1,7 @@
 package com.czetsuyatech.nerv.persistence.config;
 
-import com.czetsuyatech.nerv.persistence.entity.NervEntityConfig;
-import com.czetsuyatech.nerv.persistence.repository.NervRepositoryConfig;
+import com.czetsuyatech.nerv.persistence.entity.NervEntityPackage;
+import com.czetsuyatech.nerv.persistence.repository.NervRepositoryPackage;
 import com.czetsuyatech.nerv.persistence.repository.SimpleSliceJpaRepositoryImpl;
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -12,8 +12,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @EnableJpaRepositories(
     repositoryBaseClass = SimpleSliceJpaRepositoryImpl.class,
-    basePackageClasses = {NervRepositoryConfig.class})
-@EntityScan(basePackageClasses = NervEntityConfig.class)
+    basePackageClasses = {NervRepositoryPackage.class})
+@EntityScan(basePackageClasses = NervEntityPackage.class)
 @EnableTransactionManagement
 public class TestPersistenceConfig {
 
