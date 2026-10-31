@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration;
  * <p>This class currently serves as a marker configuration for repository scanning.
  */
 @Configuration
-public class NervRepositoryConfig {
+public class NervRepositoryPackage {
 
 }

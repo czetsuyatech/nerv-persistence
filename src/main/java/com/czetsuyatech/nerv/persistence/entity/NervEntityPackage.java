@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
  * later with entity-specific bean definitions if needed.
  */
 @Configuration
-public class NervEntityConfig {
+public class NervEntityPackage {
 
 }
